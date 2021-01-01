@@ -18,7 +18,8 @@
     "require": {
         "php": "^7.1",
         "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
-        "illuminate/http": "^5.0|^6.0|^7.0|^8.0|^9.0"
+        "illuminate/http": "^5.0|^6.0|^7.0|^8.0|^9.0",
+        "Illuminate/Validation": "^5.0|^6.0|^7.0|^8.0|^9.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
@@ -47,7 +48,7 @@
                 "Turksoy\\ResponseBuilder\\ResponseBuilderServiceProvider"
             ],
             "aliases": {
-                "ResponseBuilder": "Turksoy\\ResponseBuilder\\ResponseBuilderFacade"
+                "ResponseBuilder": "Turksoy\\ResponseBuilder\\Facades\\ResponseBuilder"
             }
         }
     }
