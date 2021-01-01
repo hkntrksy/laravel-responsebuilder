@@ -1,11 +1,10 @@
-# Very short description of the package
+# Response Builder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/turksoy/responsebuilder.svg?style=flat-square)](https://packagist.org/packages/turksoy/responsebuilder)
 [![Build Status](https://img.shields.io/travis/turksoy/responsebuilder/master.svg?style=flat-square)](https://travis-ci.org/turksoy/responsebuilder)
 [![Quality Score](https://img.shields.io/scrutinizer/g/turksoy/responsebuilder.svg?style=flat-square)](https://scrutinizer-ci.com/g/turksoy/responsebuilder)
 [![Total Downloads](https://img.shields.io/packagist/dt/turksoy/responsebuilder.svg?style=flat-square)](https://packagist.org/packages/turksoy/responsebuilder)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
 ## Installation
 
@@ -15,11 +14,69 @@ You can install the package via composer:
 composer require turksoy/responsebuilder
 ```
 
-## Usage
+## Basic Usage
 
 ``` php
-// Usage description here
+Add in controler use ResponseBuilder;
+
+    $user = [
+        'id'    => 1,
+        'name'  => 'hakan',
+        'email' => 'hakanturksoy@yandex.com'
+    ];
+    
+    $token = 'sakljSDAIASDKJERNMWE';
+
+    return ResponseBuilder::result('user',$user)
+        ->result('token',$token)
+        ->ok();
+
 ```
+
+``` json
+{
+    "meta": {
+        "messages": {
+            "success": [],
+            "warning": [],
+            "error": [],
+            "validation_error": []
+        }
+    },
+    "payload": {
+        "user": {
+            "id": 1,
+            "name": "hakan",
+            "email": "hakanturksoy@yandex.com"
+        },
+        "token": "sakljSDAIASDKJERNMWE"
+    }
+}
+```
+
+``` php
+Add in controler use ResponseBuilder;
+
+    return ResponseBuilder::message('error','User not found!')
+        ->badRequest();
+
+```
+``` json
+{
+    "meta": {
+        "messages": {
+            "success": [],
+            "warning": [],
+            "error": [
+                "User not found!"
+            ],
+            "validation_error": []
+        }
+    },
+    "payload": null
+}
+```
+
 
 ### Testing
 
