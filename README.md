@@ -16,8 +16,22 @@ composer require turksoy/responsebuilder
 
 ## Basic Usage
 
+
 ``` php
-Add in controler use ResponseBuilder;
+Add in Handler.php
+
+    use use Turksoy\ResponseBuilder\Traits\ResponseBuilderExceptionHandler;
+
+class Handler extends ExceptionHandler
+{
+
+    use ResponseBuilderExceptionHandler;
+    ...
+}
+```
+
+``` php
+Add in controller use ResponseBuilder;
 
     $user = [
         'id'    => 1,
@@ -98,8 +112,7 @@ If you discover any security related issues, please email hakanturksoy@yandex.co
 
 ## Credits
 
-- [Hakan Türksoy](https://github.com/turksoy)
-- [All Contributors](../../contributors)
+- [Hakan Türksoy](https://github.com/hkntrksy)
 
 ## License
 

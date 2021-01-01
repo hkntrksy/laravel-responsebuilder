@@ -5,7 +5,7 @@ namespace Turksoy\ResponseBuilder\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Turksoy\ResponseBuilder\Skeleton\SkeletonClass
+ * @see \Turksoy\ResponseBuilder\ResponseBuilder
  */
 class ResponseBuilder extends Facade
 {
