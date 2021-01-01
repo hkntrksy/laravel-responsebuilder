@@ -1,14 +1,13 @@
 <?php
 
-namespace Turksoy\ResponseBuilder;
+namespace Turksoy\ResponseBuilder\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Turksoy\ResponseBuilder\Skeleton\SkeletonClass
- * @deprecated moved.
  */
-class ResponseBuilderFacade extends Facade
+class ResponseBuilder extends Facade
 {
     /**
      * Get the registered name of the component.
