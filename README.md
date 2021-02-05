@@ -20,7 +20,7 @@ composer require turksoy/responsebuilder
 ``` php
 Add in Handler.php
 
-    use use Turksoy\ResponseBuilder\Traits\ResponseBuilderExceptionHandler;
+    use Turksoy\ResponseBuilder\Traits\ResponseBuilderExceptionHandler;
 
 class Handler extends ExceptionHandler
 {

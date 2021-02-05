@@ -145,73 +145,73 @@ class ResponseBuilder
 
     /**
      * @param $responseStatus
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function get($responseStatus)
+    public function get($responseStatus): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), $responseStatus);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function ok()
+    public function ok(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::OK);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function badRequest()
+    public function badRequest(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::BAD_REQUEST);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function internalServerError()
+    public function internalServerError(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::INTERNAL_SERVER_ERROR);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function unauthorized()
+    public function unauthorized(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::UNAUTHORIZED);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function notFound()
+    public function notFound(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::NOT_FOUND);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function validationFail()
+    public function validationFail(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::UNPROCESSABLE_ENTITY);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function created()
+    public function created(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::CREATED);
     }
 
     /**
-     * @return JsonResponse
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function noContent()
+    public function noContent(): \Illuminate\Http\JsonResponse
     {
         return response()->json($this->getResponse(), ResponseStatus::NO_CONTENT);
     }
