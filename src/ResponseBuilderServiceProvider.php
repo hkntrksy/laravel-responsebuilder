@@ -11,7 +11,7 @@ class ResponseBuilderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->registerHelpers();
     }
 
     /**
@@ -24,4 +24,13 @@ class ResponseBuilderServiceProvider extends ServiceProvider
             return new ResponseBuilder;
         });
     }
+
+    /**
+     * Register helpers file
+     */
+    public function registerHelpers()
+    {
+        require_once __DIR__.'/helpers.php';
+    }
+
 }

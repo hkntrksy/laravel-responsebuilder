@@ -1,8 +1,6 @@
 # Response Builder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/turksoy/responsebuilder.svg?style=flat-square)](https://packagist.org/packages/turksoy/responsebuilder)
-[![Build Status](https://img.shields.io/travis/turksoy/responsebuilder/master.svg?style=flat-square)](https://travis-ci.org/turksoy/responsebuilder)
-[![Quality Score](https://img.shields.io/scrutinizer/g/turksoy/responsebuilder.svg?style=flat-square)](https://scrutinizer-ci.com/g/turksoy/responsebuilder)
 [![Total Downloads](https://img.shields.io/packagist/dt/turksoy/responsebuilder.svg?style=flat-square)](https://packagist.org/packages/turksoy/responsebuilder)
 
 
@@ -31,8 +29,6 @@ class Handler extends ExceptionHandler
 ```
 
 ``` php
-Add in controller use ResponseBuilder;
-
     $user = [
         'id'    => 1,
         'name'  => 'hakan',
@@ -41,7 +37,8 @@ Add in controller use ResponseBuilder;
     
     $token = 'sakljSDAIASDKJERNMWE';
 
-    return ResponseBuilder::result('user',$user)
+    return reponseBuilder()
+        ->result('user',$user)
         ->result('token',$token)
         ->ok();
 
@@ -71,7 +68,8 @@ Add in controller use ResponseBuilder;
 ``` php
 Add in controler use ResponseBuilder;
 
-    return ResponseBuilder::message('error','User not found!')
+    return reponseBuilder()
+        ->message('error','User not found!')
         ->badRequest();
 
 ```
